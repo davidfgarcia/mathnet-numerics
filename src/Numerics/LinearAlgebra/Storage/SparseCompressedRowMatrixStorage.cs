@@ -1531,7 +1531,7 @@ namespace MathNet.Numerics.LinearAlgebra.Storage
 
         // FUNCTIONAL COMBINATORS: MAP
 
-        public override void MapInplace(Func<T, T> f, Zeros zeros = Zeros.AllowSkip)
+        public override void MapInplace(Func<T, T> f, Zeros zeros)
         {
             if (zeros == Zeros.Include || !Zero.Equals(f(Zero)))
             {
@@ -1584,7 +1584,7 @@ namespace MathNet.Numerics.LinearAlgebra.Storage
             }
         }
 
-        public override void MapIndexedInplace(Func<int, int, T, T> f, Zeros zeros = Zeros.AllowSkip)
+        public override void MapIndexedInplace(Func<int, int, T, T> f, Zeros zeros)
         {
             if (zeros == Zeros.Include || !Zero.Equals(f(0, 1, Zero)))
             {
